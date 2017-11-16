@@ -8,13 +8,14 @@ SPA using [Vue.js](www.vuejs.org) framework, routing, http requests and simple B
     2. "/portfolio" - Shows bought stocks and sells them
     3. '/stocks' - Shows stocks available for purchase.
 2. End Day feature - will 'finish' current day and change the stock prices.
-3. Save & Load - Saves the data to Firebase backend DB storage as JSON. Loads the data to refresh current data.
+3. Save & Load - Saves the data to [Firebase](https://firebase.google.com/) backend DB storage as JSON. Loads the data to refresh current data.
 
 ## To-Do
 1. Fix mobile size header (hamburger menu).
 
 ## Live preview
-Click [here](http://stock-app-vuejs.s3-website.eu-central-1.amazonaws.com/stocks).
+Click [here](http://stock-app-vuejs.s3-website.eu-central-1.amazonaws.com/).
+
 ## Contact
 For any questions please feel free to contact me:<br/>
 <a href="mailto:mikael.janek@gmail.com">mikael.janek@gmail.com</a>
