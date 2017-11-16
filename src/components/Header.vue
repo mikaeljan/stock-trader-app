@@ -15,7 +15,7 @@
                         <li><a href="#">Load Data</a></li>
                     </ul>
                 </li>
-                <li><a>Funds: {{ value }}</a></li>
+                <li><a>Funds: {{ value | currency}}</a></li>
             </ul>
         </div>
 
