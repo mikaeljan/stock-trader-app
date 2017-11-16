@@ -32,9 +32,14 @@
                 return this.$store.getters.credit;
             }
         },
-        methods:{...mapActions({
-            endDay: 'endDay',
-        })}
+        methods:{
+            ...mapActions([
+                'randomizeStocks'
+            ]),
+            endDay(){
+                this.randomizeStocks();
+            },
+        }
     }
 </script>
 
