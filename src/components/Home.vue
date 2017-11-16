@@ -4,7 +4,7 @@
         <p> You may Save & Load your Data </p>
         <p> Click on 'End Day' to begin a New Day! </p>
         <hr>
-        <p><strong>Your Credit: {{value | currency}}</strong></p>
+        <p><strong>Your Credit: {{credit | currency}}</strong></p>
     </div>
 </template>
 
@@ -12,7 +12,7 @@
     import {mapGetters} from 'vuex';
     export default {
         computed: {
-            value() {
+            credit() {
                 return this.$store.getters.credit;
             }
         },

@@ -8,14 +8,24 @@
         </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li @click='endDay'><a>End Day</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Save & Load <span class="caret"></span></a>
+                <li class="dropdown"
+                    :class="{open: menuDropped}"
+                    @click='dropMenu'>
+                    <a href="#"
+                       class="dropdown-toggle"
+                       data-toggle="dropdown"
+                       role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                    >
+                        Save & Load
+                        <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Save Data</a></li>
-                        <li><a href="#">Load Data</a></li>
+                        <li><a href="#" @click='saveData'>Save Data</a></li>
+                        <li><a href="#" @click='loadData'>Load Data</a></li>
                     </ul>
                 </li>
-                <li><a>Funds: {{ value | currency}}</a></li>
+                <li><a>Funds: {{ credit | currency}}</a></li>
             </ul>
         </div>
 
@@ -26,19 +36,47 @@
 
 <script>
     import {mapActions} from 'vuex';
+    import axios from 'axios'
     export default {
+        data() {
+            return {
+                menuDropped: false
+            }
+        },
         computed: {
-            value() {
+            stocks() {
+                return this.$store.getters.stocks;
+            },
+            credit() {
                 return this.$store.getters.credit;
             }
         },
-        methods:{
-            ...mapActions([
-                'randomizeStocks'
-            ]),
-            endDay(){
+        methods: {
+            ...mapActions({
+                'randomizeStocks':'randomizeStocks',
+                'fetchData':'loadData'
+            }),
+            endDay() {
                 this.randomizeStocks();
             },
+            dropMenu() {
+                this.menuDropped = !this.menuDropped;
+            },
+            saveData() {
+                console.log('Save');
+                const data = {
+                    credit: this.$store.getters.credit,
+                    stocks: this.$store.getters.stocks,
+                    stocksOwned: this.$store.getters.stockPortfolio,
+                };
+                axios.put('https://vuejs-http-a1a5c.firebaseio.com/stocks.json', data)
+                    .then((res) => { })
+                    .catch(err => {console.log(err)});
+            },
+            loadData() {
+                console.log('Load');
+                this.fetchData();
+            }
         }
     }
 </script>

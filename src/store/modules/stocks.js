@@ -24,6 +24,9 @@ const actions = {
     },
     randomizeStocks:({commit})=>{
         commit('RND_STOCKS');
+    },
+    setStocks({commit},payload){
+        commit('UPDATE_STOCKS',payload)
     }
 };
 
