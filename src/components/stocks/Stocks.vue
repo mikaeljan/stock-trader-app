@@ -1,13 +1,11 @@
 <template>
     <div class="row">
-        <div class="col-md-6">
             <stock-comp v-for="(stock, index) in stocks"
                         :stock='stock'
                         :index='index'
                         :key='index'>
 
             </stock-comp>
-        </div>
     </div>
 </template>
 

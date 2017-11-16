@@ -1,18 +1,8 @@
-# vue-cli
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# Stock Trading SPA
+SPA using [Vue.js](www.vuejs.org) framework, routing, http requests and simple Bootstrap styling.
+- Backend part is provided with [Firebase](https://firebase.google.com/).
+## Live preview
+Click [here](http://stock-app-vuejs.s3-website.eu-central-1.amazonaws.com/stocks).
+## Contact
+For any questions please feel free to contact me:<br/>
+<a href="mailto:mikael.janek@gmail.com">mikael.janek@gmail.com</a>
