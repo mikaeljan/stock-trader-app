@@ -1,19 +1,23 @@
 <template>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <router-link class='navbar-brand col-xs-8 col-sm-3' to='/'>Stock Trader</router-link>
+            <button @click='toggleHamburger'
+                    type="button"
+                    class="navbar-toggle collapsed "
+                    data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-        <router-link class='navbar-brand' to='/'>Stock Trader</router-link>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <div class="collapse navbar-collapse col-xs-12 pull-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <router-link  :to='{name:"portfolio"}' tag='li'><a>Portfolio</a></router-link>
                 <router-link  :to='{name:"stocks"}' tag='li'><a>Stocks</a></router-link>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right " >
                 <li @click='endDay'><a>End Day</a></li>
                 <li class="dropdown"
                     :class="{open: menuDropped}"
@@ -47,7 +51,8 @@
     export default {
         data() {
             return {
-                menuDropped: false
+                menuDropped: false,
+                toggleHamburgerMenu: false
             }
         },
         computed: {
@@ -68,6 +73,9 @@
             },
             dropMenu() {
                 this.menuDropped = !this.menuDropped;
+            },
+            toggleHamburger(){
+
             },
             saveData() {
                 console.log('Save');

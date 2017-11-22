@@ -5,7 +5,7 @@
                 <h3 class="panel-title">{{stock.name}} <small>(Price: {{stock.price}} )</small></h3>
             </div>
             <div class="panel-body">
-                <div class="pull-left">
+                <div class="pull-left col-xs-6">
                     <form>
                         <div class="form-group">
                         <input placeholder="Quantity" class="form-control" type="number" v-model.number='amount'>
