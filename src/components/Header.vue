@@ -1,11 +1,18 @@
 <template>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         <router-link class='navbar-brand' to='/'>Stock Trader</router-link>
-        <ul class="nav navbar-nav">
-            <router-link  :to='{name:"portfolio"}' tag='li'><a>Portfolio</a></router-link>
-            <router-link  :to='{name:"stocks"}' tag='li'><a>Stocks</a></router-link>
-        </ul>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <router-link  :to='{name:"portfolio"}' tag='li'><a>Portfolio</a></router-link>
+                <router-link  :to='{name:"stocks"}' tag='li'><a>Stocks</a></router-link>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li @click='endDay'><a>End Day</a></li>
                 <li class="dropdown"
@@ -28,7 +35,7 @@
                 <li><a>Funds: {{ credit | currency}}</a></li>
             </ul>
         </div>
-
+        </div>
     </nav>
 
 
