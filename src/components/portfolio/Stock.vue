@@ -16,7 +16,7 @@
                     <button class="btn btn-info"
                             @click='sell({stock:stock, amount:amount})'
                             :disabled='ifNotNumber || stock.price > credit || amount > stock.amount'
-                    >Sell Stocks
+                    >Sell
                     </button>
                 </div>
             </div>

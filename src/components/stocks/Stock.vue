@@ -16,7 +16,7 @@
                     <button class="btn btn-success"
                             @click='buy({stock:stock, amount:amount})'
                             :disabled='ifNotNumber || (stock.price * amount) > credit '
-                    >Buy Stocks
+                    >Buy
                     </button>
                 </div>
             </div>
