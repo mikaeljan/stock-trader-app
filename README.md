@@ -14,7 +14,7 @@ SPA using [Vue.js](www.vuejs.org) framework, routing, http requests and simple B
 1. Fix mobile size header (hamburger menu).
 
 ## Live preview
-Click [here](http://stock-app-vuejs.s3-website.eu-central-1.amazonaws.com/).
+Click [here](http://stock-web-app-vuejs.s3-website.eu-central-1.amazonaws.com/).
 
 ## Contact
 For any questions please feel free to contact me:<br/>
